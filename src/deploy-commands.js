@@ -22,9 +22,9 @@ for (const folder of commandFolders) {
 		const filePath = folderPath + '/' + file;
 		console.log({ file, filePath });
 
-		const command = await import(filePath);
-		if ('data' in command.default && 'execute' in command.default) {
-			commands.push(command.default.data.toJSON());
+		const { default: command } = await import(filePath);
+		if ('data' in command && 'execute' in command) {
+			commands.push(command.data.toJSON());
 		} else {
 			console.log(`[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`);
 		}

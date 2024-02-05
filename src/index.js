@@ -19,10 +19,10 @@ for (const folder of commandFolders) {
 
 	for (const file of commandFiles) {
 		const filePath = folderPath + '/' + file;
-		const command = await import(filePath);
+		const { default: command } = await import(filePath);
 		// Set a new item in the Collection with the key as the command name and the value as the exported module
-		if ('data' in command.default && 'execute' in command.default) {
-			client.commands.set(command.default.data.name, command.default);
+		if ('data' in command && 'execute' in command) {
+			client.commands.set(command.data.name, command);
 		} else {
 			console.log(`[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`);
 		}
