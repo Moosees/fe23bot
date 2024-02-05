@@ -2,10 +2,11 @@
 	"name": "fe23bot",
 	"version": "1.0.0",
 	"description": "",
-	"main": "index.js",
+	"main": "src/index.js",
 	"type": "module",
 	"scripts": {
-		"start": "node index.js",
+		"start": "node src/index.js",
+		"register": "node src/deploy-commands.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "",
