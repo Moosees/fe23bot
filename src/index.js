@@ -7,9 +7,11 @@ const srcPath = import.meta.url;
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
-// Loading command files
+// Add useful collections
 client.commands = new Collection();
+client.cooldowns = new Collection();
 
+// Loading command files
 const commandFolders = readdirSync(new URL('./commands', srcPath));
 
 for (const folder of commandFolders) {
