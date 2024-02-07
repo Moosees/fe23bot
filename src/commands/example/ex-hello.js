@@ -4,8 +4,8 @@ import { wait } from '../../tools/index.js';
 export default { // default export will automatically be loaded in bot
 	cooldown: 5, // prevent command from being used again for 5 seconds (default is 3s)
 	data: new SlashCommandBuilder()
-		.setName('example') // /example to run the command
-		.setDescription('The command to command them all, or not'),
+		.setName('ex-hello') // /example to run the command
+		.setDescription('Hello with twists and comments'),
 	async execute(interaction) {
 		// discord need the bot to reply withing three seconds
 		// deferReply allows us to delay our reply without sending a reply
