@@ -1,6 +1,6 @@
 import 'dotenv/config.js';
 import { Client, Collection, GatewayIntentBits } from 'discord.js';
-import { getAllFilesInFolder } from './tools/index.js';
+import { getAllFilesInFolder, sequelize } from './tools/index.js';
 
 // Create a new client instance
 const client = new Client({
@@ -9,6 +9,14 @@ const client = new Client({
 		GatewayIntentBits.GuildMessages,
 		GatewayIntentBits.MessageContent]
 });
+
+// Initialize sequelize sqlite client
+try {
+	await sequelize.authenticate();
+	console.log('Connection has been established successfully.');
+} catch (error) {
+	console.error('Unable to connect to the database:', error);
+}
 
 // Add useful collections
 client.commands = new Collection();

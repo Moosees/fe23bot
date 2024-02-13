@@ -2,6 +2,7 @@ import { readdirSync } from 'fs';
 import { setTimeout } from "node:timers/promises";
 
 export const wait = setTimeout;
+export { sequelize } from './sequelize.js';
 
 export const getAllFilesInFolder = (folderName) => {
 	const foundFiles = [];
