@@ -8,6 +8,9 @@ export default {
 
 		// check if a interaction contains the word katt
 		if (interaction.content.toLowerCase().includes('katt')) {
+			// stop if user is not a human
+			if (interaction.author.bot) return;
+
 			// react to message
 			await interaction.react('🐱');
 			// and reply to message
