@@ -19,3 +19,25 @@
 * First follow the steps above to setup the bot
 * *npm run register* registers the commands with Discord. This is only needed before starting the bot for the first time, or if a command is added or removed
 * *npm start* starts the bot with nodemon and will restart the bot if any file is changed
+
+## Contributing
+
+### Pull requests
+
+1. Fork the repo
+2. Follow steps above to setup and run the bot
+3. Make changes with help from the guidelines below
+4. Lint code with *npm run lint* or manually with eslint
+5. Create a pull request
+
+### Files and folders
+
+* Try to put all addition into new files and avoid making changes to core files
+* When adding events or commands, create a new "personal" folder inside the src/commands or src/events and put all relevant files there. Use default export for the event or command and it will be automatically added to the bot
+* When adding db models, create a new file in src/models, use a named export for easy access in the rest of the app and don't forget to sync the model in src/models/index.js
+* If adding a tool, create a new file and export it from src/tools/index.js
+
+## Useful links
+
+* [Discord.js docs](https://old.discordjs.dev/#/docs)
+* [sequelize docs](https://sequelize.org/docs/v6/core-concepts/model-querying-basics/)
