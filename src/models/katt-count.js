@@ -4,14 +4,14 @@ import { sequelize } from '../tools/index.js';
 export const KattCount = sequelize.define('kattCount', {
 	userId: {
 		type: Sequelize.STRING,
-		unique: true
+		unique: true,
 	},
 	userName: {
-		type: Sequelize.STRING
+		type: Sequelize.STRING,
 	},
 	count: {
 		type: Sequelize.INTEGER,
 		defaultValue: 0,
 		allowNull: false,
-	}
+	},
 });

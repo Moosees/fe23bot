@@ -7,5 +7,5 @@ export default {
 	once: true,
 	execute() {
 		syncModels();
-	}
+	},
 };

@@ -11,7 +11,7 @@ export default {
 			.setRequired(true))
 		.addIntegerOption(option => option
 			.setName('num2')
-			.setDescription('Second integer')
+			.setDescription('Second integer'),
 		),
 	async execute(interaction) {
 		// First option is required so command will not run without a value

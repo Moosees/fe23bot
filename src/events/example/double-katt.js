@@ -30,8 +30,8 @@ export default {
 			await KattCount.create({
 				userId: interaction.author.id,
 				userName: interaction.author.username,
-				count: 1
+				count: 1,
 			});
 		}
-	}
+	},
 };
