@@ -6,7 +6,9 @@
 	"type": "module",
 	"scripts": {
 		"start": "nodemon src/index.js",
-		"lint": "npx eslint src/** --fix",
+		"lint": "echo 'PRINTING LINT';npm run lint.print;echo 'FIXING LINT';npm run lint.fix",
+		"lint.print": "npx eslint src/**",
+		"lint.fix": "npx eslint src/** --fix",
 		"register": "node src/deploy-commands.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
